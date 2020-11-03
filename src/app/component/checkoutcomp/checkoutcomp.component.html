@@ -1,0 +1,289 @@
+<div id="heading-breadcrumbs">
+  <div class="container">
+    <div class="row d-flex align-items-center flex-wrap">
+      <div class="col-md-7">
+        <h1 class="h2">Checkout - Address</h1>
+      </div>
+      <div class="col-md-5">
+        <ul class="breadcrumb d-flex justify-content-end">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Checkout - Address</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="content" *ngIf="pagenumb == 0">
+  <div class="container">
+    <div class="row">
+      <div id="checkout" class="col-lg-12">
+        <div class="box border-bottom-0">
+          <ul class="nav nav-pills nav-fill">
+            <li class="nav-item">
+              <a class="nav-link active">
+                <i class="fa fa-map-marker"></i><br />Address</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="nav-link disabled"
+                ><i class="fa fa-eye"></i><br />Order Review</a
+              >
+            </li>
+          </ul>
+          <div class="content">
+            <form [formGroup]="orderform">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="company">Company</label>
+                    <input
+                      id="company"
+                      type="text"
+                      formControlName="Company"
+                      class="form-control"
+                      [ngClass]="{
+                        'is-invalid': submitted && f.Company.errors
+                      }"
+                    />
+                    <div
+                      *ngIf="submitted && f.Company.errors"
+                      class="invalid-feedback"
+                    >
+                      <div *ngIf="f.Company.errors.required">required</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="phone">Telephone</label>
+                    <input
+                      id="phone"
+                      type="text"
+                      class="form-control"
+                      formControlName="Telephone"
+                      [ngClass]="{
+                        'is-invalid': submitted && f.Telephone.errors
+                      }"
+                      pattern="[0-9]{2}[0-9]{3}[0-9]{3}"
+                    />
+                    <div
+                      *ngIf="submitted && f.Telephone.errors"
+                      class="invalid-feedback"
+                    >
+                      <div *ngIf="f.Telephone.errors.pattern">
+                        doit etre 8 chiffres
+                      </div>
+                      <div *ngIf="f.Telephone.errors.required">required</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input
+                      id="email"
+                      type="text"
+                      class="form-control"
+                      formControlName="email"
+                      [ngClass]="{
+                        'is-invalid': submitted && f.email.errors
+                      }"
+                    />
+                    <div
+                      *ngIf="submitted && f.email.errors"
+                      class="invalid-feedback"
+                    >
+                      <div *ngIf="f.email.errors.required">required</div>
+                      <div *ngIf="f.email.errors.email">
+                        must be a valid email address
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="street">Address</label>
+                    <input
+                      id="street"
+                      type="text"
+                      class="form-control"
+                      formControlName="address"
+                      [ngClass]="{
+                        'is-invalid': submitted && f.address.errors
+                      }"
+                    />
+                    <div
+                      *ngIf="submitted && f.address.errors"
+                      class="invalid-feedback"
+                    >
+                      <div *ngIf="f.address.errors.required">required</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="Gov-login">Gouvernorat </label>
+                    <input
+                      id="Gov-login"
+                      type="text"
+                      class="form-control"
+                      formControlName="gouvernorat"
+                      [ngClass]="{
+                        'is-invalid': submitted && f.gouvernorat.errors
+                      }"
+                      [matAutocomplete]="auto"
+                    />
+                    <mat-autocomplete #auto="matAutocomplete">
+                      <mat-option
+                        *ngFor="let option of filteredOptions | async"
+                        [value]="option"
+                      >
+                        {{ option }}
+                      </mat-option>
+                    </mat-autocomplete>
+
+                    <div
+                      *ngIf="submitted && f.gouvernorat.errors"
+                      class="invalid-feedback"
+                    >
+                      <div *ngIf="f.gouvernorat.errors.required">required</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="zip">ZIP</label>
+                    <input
+                      id="zip"
+                      type="text"
+                      class="form-control"
+                      formControlName="zipcode"
+                      [ngClass]="{
+                        'is-invalid': submitted && f.zipcode.errors
+                      }"
+                      pattern="[0-9]{4}"
+                    />
+                    <div
+                      *ngIf="submitted && f.zipcode.errors"
+                      class="invalid-feedback"
+                    >
+                      <div *ngIf="f.zipcode.errors.required">required</div>
+                      <div *ngIf="f.zipcode.errors.pattern">
+                        code postal invalid
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class
+                class="box-footer d-flex flex-wrap align-items-center justify-content-between"
+              >
+                <div class="left-col">
+                  <a class="btn btn-secondary mt-0"
+                    ><i class="fa fa-chevron-left"></i>Back to basket</a
+                  >
+                </div>
+
+                <div class="right-col">
+                  <button (click)="onSubmit()" class="btn btn-template-main">
+                    Continue to Delivery Method<i
+                      class="fa fa-chevron-right"
+                    ></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="content" *ngIf="pagenumb == 1">
+  <div class="container">
+    <div class="row">
+      <div id="checkout" class="col-lg-12">
+        <div class="box">
+          <form method="get" action="shop-checkout4.html">
+            <ul class="nav nav-pills nav-fill">
+              <li class="nav-item">
+                <a href="shop-checkout1.html" class="nav-link">
+                  <i class="fa fa-map-marker"></i><br />Address</a
+                >
+              </li>
+
+              <li class="nav-item">
+                <a href="shop-checkout4.html" class="nav-link active"
+                  ><i class="fa fa-eye"></i><br />Order Review</a
+                >
+              </li>
+            </ul>
+          </form>
+          <div class="content">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th colspan="2">Product</th>
+                    <th>Quantity</th>
+                    <th>Unit price</th>
+                    <th>Discount</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of products">
+                    <td>
+                      <a href="#"
+                        ><img
+                          src="img/detailsquare.jpg"
+                          alt="White Blouse Armani"
+                      /></a>
+                    </td>
+                    <td>
+                      <a href="#">{{ item.product.name }}</a>
+                    </td>
+                    <td>{{ item.quantity }}</td>
+                    <td>$123.00</td>
+                    <td>$0.00</td>
+                    <td>$246.00</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th colspan="5">Total</th>
+                    <th>$446.00</th>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+          <div
+            class="box-footer d-flex flex-wrap align-items-center justify-content-between"
+          >
+            <div class="left-col">
+              <a href="shop-checkout3.html" class="btn btn-secondary mt-0"
+                ><i class="fa fa-chevron-left"></i>Back to payment method</a
+              >
+            </div>
+            <div class="right-col">
+              <button (click)="postorder()" class="btn btn-template-main">
+                Place the order<i class="fa fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

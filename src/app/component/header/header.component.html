@@ -1,0 +1,117 @@
+<nav class="nav-holder make-sticky">
+  <div id="navbar" role="navigation" class="navbar navbar-expand-lg">
+    <div class="container">
+      <a href="/home" class="navbar-brand home"
+        ><img
+          src="assets/img/madautologo.jpg"
+          alt=" logo"
+          class="d-none d-md-inline-block"
+          style="width: 270px; height: 50px"
+        /><img
+          src="assets/img/madautologo.jpg"
+          alt=" logo"
+          class="d-inline-block d-md-none"
+        /><span class="sr-only">ACCUEIL</span></a
+      >
+      <button
+        type="button"
+        data-toggle="collapse"
+        data-target="#navigation"
+        class="navbar-toggler btn-template-outlined"
+      >
+        <span class="sr-only">Toggle navigation</span
+        ><i class="fa fa-align-justify"></i>
+      </button>
+      <div id="navigation" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a href="/home">ACCUEIL <b class="caret"></b></a>
+            <!-- <ul class="dropdown-menu">
+              <li class="dropdown-item">
+                <a href="index.html" class="nav-link">Option 1: Default Page</a>
+              </li>
+              <li class="dropdown-item">
+                <a href="index2.html" class="nav-link">Option 2: Application</a>
+              </li>
+              <li class="dropdown-item">
+                <a href="index3.html" class="nav-link">Option 3: Startup</a>
+              </li>
+              <li class="dropdown-item">
+                <a href="index4.html" class="nav-link">Option 4: Agency</a>
+              </li>
+              <li class="dropdown-item dropdown-submenu">
+                <a
+                  id="navbarDropdownMenuLink2"
+                  href="#"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  class="nav-link dropdown-toggle"
+                  >Dropdown link</a
+                >
+                <ul
+                  aria-labelledby="navbarDropdownMenuLink2"
+                  class="dropdown-menu"
+                >
+                  <li class="dropdown-item">
+                    <a href="#" class="nav-link">Action</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="#" class="nav-link">Another action</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="#" class="nav-link">Something else here</a>
+                  </li>
+                </ul>
+              </li>
+            </ul> -->
+          </li>
+          <li class="nav-item dropdown">
+            <a href="/products">PRODUITS<b class="caret"></b></a>
+          </li>
+          <li class="nav-item dropdown" *ngIf="authservice.isUserLoggedIn()">
+            <a href="/espace-client">Mon Espace<b class="caret"></b></a>
+          </li>
+          <li class="nav-item dropdown" *ngIf="!authservice.isUserLoggedIn()">
+            <a href="/signin"
+              ><i class="fa fa-sign-in" aria-hidden="true"></i>connecter<b
+                class="caret"
+              ></b
+            ></a>
+          </li>
+          <li class="nav-item dropdown" *ngIf="authservice.isUserLoggedIn()">
+            <a (click)="logout()">Logout<b class="caret"></b></a>
+          </li>
+          <li class="nav-item dropdown" class="caret">
+            <a href="/panier"
+              ><i
+                matBadge="{{ shopcartservice.countitems() }}"
+                matBadgeColor="warn"
+                class="fa fa-shopping-basket"
+              ></i
+            ></a>
+          </li>
+
+          <!-- ========== FULL WIDTH MEGAMENU ==================-->
+
+          <!-- ========== FULL WIDTH MEGAMENU END ==================-->
+          <!-- ========== Contact dropdown ==================-->
+
+          <!-- ========== Contact dropdown end ==================-->
+        </ul>
+      </div>
+      <!-- <div id="search" class="collapse clearfix">
+        <form role="search" class="navbar-form">
+          <div class="input-group">
+            <input type="text" placeholder="Search" class="form-control" /><span
+              class="input-group-btn"
+            >
+              <button type="submit" class="btn btn-template-main">
+                <i class="fa fa-search"></i></button
+            ></span>
+          </div>
+        </form>
+      </div> -->
+    </div>
+  </div>
+</nav>

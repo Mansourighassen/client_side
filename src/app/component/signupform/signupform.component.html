@@ -1,0 +1,154 @@
+<div class="box">
+  <h2 class="text-uppercase">CRÉEZ VOTRE COMPTE</h2>
+
+  <p class="lead">S'INSCRIRE</p>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="lastname-login">Nom</label>
+      <input
+        id="lastname-login"
+        type="text"
+        class="form-control"
+        formControlName="lastname"
+        [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }"
+      />
+      <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+        <div *ngIf="f.lastname.errors.required">required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="firstname-login">Prénom </label>
+      <input
+        id="firstname-login"
+        type="text"
+        class="form-control"
+        formControlName="firstname"
+        [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }"
+      />
+      <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+        <div *ngIf="f.firstname.errors.required">required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="Raisonsocial-login">Raison social</label>
+      <input
+        id="Raisonsocial-login"
+        type="text"
+        class="form-control"
+        formControlName="raisonsocial"
+        [ngClass]="{ 'is-invalid': submitted && f.raisonsocial.errors }"
+      />
+      <div *ngIf="submitted && f.raisonsocial.errors" class="invalid-feedback">
+        <div *ngIf="f.raisonsocial.errors.required">required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="Gov-login">Gouvernorat </label>
+      <input
+        id="Gov-login"
+        type="text"
+        class="form-control"
+        formControlName="gouvernorat"
+        [ngClass]="{ 'is-invalid': submitted && f.gouvernorat.errors }"
+        [matAutocomplete]="auto"
+      />
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option
+          *ngFor="let option of filteredOptions | async"
+          [value]="option"
+        >
+          {{ option }}
+        </mat-option>
+      </mat-autocomplete>
+
+      <div *ngIf="submitted && f.gouvernorat.errors" class="invalid-feedback">
+        <div *ngIf="f.gouvernorat.errors.required">required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="adresse-login">adresse</label>
+      <input
+        id="adresse-login"
+        type="text"
+        class="form-control"
+        formControlName="address"
+        [ngClass]="{ 'is-invalid': submitted && f.address.errors }"
+      />
+      <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+        <div *ngIf="f.address.errors.required">required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="adresse-login">code postal</label>
+      <input
+        id="adresse-zipcode"
+        type="text"
+        class="form-control"
+        formControlName="zipcode"
+        [ngClass]="{ 'is-invalid': submitted && f.zipcode.errors }"
+        pattern="[0-9]{4}"
+      />
+      <div *ngIf="submitted && f.zipcode.errors" class="invalid-feedback">
+        <div *ngIf="f.zipcode.errors.required">required</div>
+        <div *ngIf="f.zipcode.errors.pattern">code postal invalid</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email-login">Email</label>
+      <input
+        id="email-login"
+        formControlName="email"
+        [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+        type="text"
+        class="form-control"
+      />
+      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+        <div *ngIf="userexist">email existe deja</div>
+        <div *ngIf="f.email.errors.required">required</div>
+        <div *ngIf="f.email.errors.email">must be a valid email address</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="phone-login">N° de Téléphone </label>
+      <input
+        id="phone-login"
+        formControlName="phonenumber"
+        [ngClass]="{ 'is-invalid': submitted && f.phonenumber.errors }"
+        type="text"
+        pattern="[0-9]{2}[0-9]{3}[0-9]{3}"
+        class="form-control"
+      />
+      <div *ngIf="submitted && f.phonenumber.errors" class="invalid-feedback">
+        <div *ngIf="f.phonenumber.errors.pattern">
+          le numero doit etre 8 chiffres
+        </div>
+        <div *ngIf="f.phonenumber.errors.required">required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password-login">Mot de passe</label>
+      <input
+        id="password-login"
+        type="password"
+        class="form-control"
+        formControlName="password"
+        [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+      />
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">required</div>
+        <div *ngIf="f.password.errors.minlength">
+          must be at least 8 characters
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <button class="btn btn-template-outlined">
+        <i class="fa fa-user-md"></i> INSCRIRE
+      </button>
+    </div>
+  </form>
+</div>

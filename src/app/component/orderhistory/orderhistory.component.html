@@ -1,0 +1,40 @@
+<div id="content">
+  <div class="container">
+    <div class="row bar mb-0">
+      <div id="customer-orders" class="col-md-12">
+        <div>
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>idcommande</th>
+                  <th>Date de creation</th>
+                  <th>telephone</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of Orders">
+                  <th>{{ item.id }}</th>
+                  <td>{{ item.createdate }}</td>
+                  <td>{{ item.telephone }}</td>
+                  <td>
+                    <span class="badge badge-info">{{ item.status }}</span>
+                  </td>
+                  <td>
+                    <a
+                      (click)="getorderdetail(item)"
+                      class="btn btn-template-outlined btn-sm"
+                      >consulter</a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

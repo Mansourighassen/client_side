@@ -1,0 +1,72 @@
+<div class="modal-dialog modal-login">
+  <div *ngIf="!checkauth" class="modal-content">
+    <div class="modal-header">
+      <div class="avatar">
+        <img src="/src/assets/img/avatar.png" alt="Avatar" />
+      </div>
+      <h4 class="modal-title">Member Login</h4>
+      <button mat-button mat-dialog-close class="close">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div
+        *ngIf="err"
+        role="alert"
+        class="alert alert-danger alert-dismissible"
+      >
+        <button type="button" data-dismiss="alert" class="close">
+          <span aria-hidden="true">×</span
+          ><span class="sr-only">Close</span></button
+        >{{ err }}
+      </div>
+      <form>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            name="username"
+            placeholder="Username"
+            required="required"
+            [(ngModel)]="username"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            placeholder="Password"
+            [(ngModel)]="password"
+            required="required"
+          />
+        </div>
+        <div class="form-group">
+          <button
+            (click)="dologin()"
+            type="submit"
+            class="btn btn-primary btn-lg btn-block login-btn"
+          >
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <a href="#">Forgot Password?</a>
+    </div>
+  </div>
+  <div *ngIf="checkauth" class="modal-dialog modal-confirm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="icon-box">
+          <i class="fa fa-check" aria-hidden="true"></i>
+        </div>
+        <h4 class="modal-title">Bienvenue!</h4>
+      </div>
+      <div class="modal-body">
+        <p class="text-center">
+          {{ username }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

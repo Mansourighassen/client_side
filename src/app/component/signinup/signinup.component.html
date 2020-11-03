@@ -1,0 +1,72 @@
+<div id="heading-breadcrumbs">
+  <div class="container">
+    <div class="row d-flex align-items-center flex-wrap">
+      <div class="col-md-7">
+        <h1 class="h2">Se connecter</h1>
+      </div>
+      <div class="col-md-5">
+        <ul class="breadcrumb d-flex justify-content-end">
+          <li class="breadcrumb-item"><a href="/home">Home</a></li>
+          <li class="breadcrumb-item active">Se connecter</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <app-signupform></app-signupform>
+      </div>
+      <div class="col-lg-6">
+        <div class="box">
+          <h2 class="text-uppercase">Login</h2>
+          <p class="lead">IDENTIFIEZ-VOUS</p>
+          <div
+            *ngIf="err"
+            role="alert"
+            class="alert alert-danger alert-dismissible"
+          >
+            <button type="button" data-dismiss="alert" class="close">
+              <span aria-hidden="true">×</span
+              ><span class="sr-only">Close</span></button
+            >{{ err }}
+          </div>
+          <form form action="customer-orders.html" method="get">
+            <div class="form-group">
+              <label for="email">Nom d'utilisateur</label>
+              <input
+                id="email"
+                [(ngModel)]="username"
+                type="text"
+                name="username"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label for="password">Mot de passe</label>
+              <input
+                name="password"
+                id="password"
+                [(ngModel)]="password"
+                type="password"
+                class="form-control"
+              />
+            </div>
+            <div class="text-center">
+              <!--  -->
+              <button
+                type="submit"
+                class="btn btn-template-outlined"
+                (click)="dologin()"
+              >
+                <i class="fa fa-sign-in"></i> Log in
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

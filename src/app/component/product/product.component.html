@@ -1,0 +1,422 @@
+<div id="heading-breadcrumbs">
+  <div class="container">
+    <div class="row d-flex align-items-center flex-wrap">
+      <div class="col-md-7">
+        <h1 class="h2" *ngIf="product">{{ product.name }}</h1>
+      </div>
+      <div class="col-md-5">
+        <ul class="breadcrumb d-flex justify-content-end">
+          <li class="breadcrumb-item"><a href="/home">Home</a></li>
+          <li class="breadcrumb-item"><a href="/products">products</a></li>
+          <li class="breadcrumb-item active" *ngIf="product">
+            {{ product.name }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="col-lg-9">
+  <p class="lead">
+    Built purse maids cease her ham new seven among and. Pulled coming wooded
+    tended it answer remain me be. So landlord by we unlocked sensible it. Fat
+    cannot use denied excuse son law. Wisdom happen suffer common the appear ham
+    beauty her had. Or belonging zealously existence as by resources.
+  </p>
+  <p class="goToDescription">
+    <a href="#details" class="scroll-to text-uppercase"
+      >Scroll to product details, material &amp; care and sizing</a
+    >
+  </p>
+  <div id="productMain" class="row">
+    <div class="col-sm-6">
+      <div
+        data-slider-id="1"
+        class="owl-carousel shop-detail-carousel owl-loaded owl-drag"
+      >
+        <div class="owl-stage-outer">
+          <div
+            class="owl-stage"
+            style="
+              transform: translate3d(-795px, 0px, 0px);
+              transition: all 0.25s ease 0s;
+              width: 1193px;
+            "
+          >
+            <div class="owl-item" style="width: 397.5px">
+              <div>
+                <img
+                  src="/assets/img/detailbig1.jpg"
+                  alt=""
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+            <div class="owl-item" style="width: 397.5px">
+              <div>
+                <img
+                  src="/assets/img/detailbig2.jpg"
+                  alt=""
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+            <div class="owl-item active" style="width: 397.5px">
+              <div>
+                <img
+                  src="/assets/img/detailbig3.jpg"
+                  alt=""
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="owl-nav disabled">
+          <button type="button" role="presentation" class="owl-prev">
+            <span aria-label="Previous">‹</span></button
+          ><button type="button" role="presentation" class="owl-next">
+            <span aria-label="Next">›</span>
+          </button>
+        </div>
+        <div class="owl-dots disabled"></div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="box">
+        <form>
+          <div class="sizes">
+            <h3>Available sizes</h3>
+            <div class="dropdown bootstrap-select bs-select">
+              <select class="bs-select" tabindex="-98">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+                <option value="x-large">X Large</option></select
+              ><button
+                type="button"
+                class="btn dropdown-toggle btn-light"
+                data-toggle="dropdown"
+                role="combobox"
+                aria-owns="bs-select-1"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                title="Small"
+              >
+                <div class="filter-option">
+                  <div class="filter-option-inner">
+                    <div class="filter-option-inner-inner">Small</div>
+                  </div>
+                </div>
+              </button>
+              <div class="dropdown-menu">
+                <div
+                  class="inner show"
+                  role="listbox"
+                  id="bs-select-1"
+                  tabindex="-1"
+                >
+                  <ul class="dropdown-menu inner show" role="presentation"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="price">$124.00</p>
+          <p class="text-center">
+            <button type="submit" class="btn btn-template-outlined">
+              <i class="fa fa-shopping-cart"></i> Add to cart
+            </button>
+            <button
+              type="submit"
+              data-toggle="tooltip"
+              data-placement="top"
+              title=""
+              class="btn btn-default"
+              data-original-title="Add to wishlist"
+            >
+              <i class="fa fa-heart-o"></i>
+            </button>
+          </p>
+        </form>
+      </div>
+      <div data-slider-id="1" class="owl-thumbs">
+        <button class="owl-thumb-item">
+          <img src="/assets/img/detailsquare.jpg" alt="" class="img-fluid" />
+        </button>
+        <button class="owl-thumb-item">
+          <img src="/assets/img/detailsquare2.jpg" alt="" class="img-fluid" />
+        </button>
+        <button class="owl-thumb-item active">
+          <img src="/assets/img/detailsquare3.jpg" alt="" class="img-fluid" />
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="details" class="box mb-4 mt-4">
+    <p></p>
+    <h4>Product details</h4>
+    <p>
+      White lace top, woven, has a round neck, short sleeves, has knitted lining
+      attached
+    </p>
+    <h4>Material &amp; care</h4>
+    <ul>
+      <li>Polyester</li>
+      <li>Machine wash</li>
+    </ul>
+    <h4>Size &amp; Fit</h4>
+    <ul>
+      <li>Regular fit</li>
+      <li>The model (height 5'8 "and chest 33") is wearing a size S</li>
+    </ul>
+    <blockquote class="blockquote">
+      <p class="mb-0">
+        <em
+          >Define style this season with Armani's new range of trendy tops,
+          crafted with intricate details. Create a chic statement look by
+          teaming this lace number with skinny jeans and pumps.</em
+        >
+      </p>
+    </blockquote>
+  </div>
+  <div id="product-social" class="box social text-center mb-5 mt-5">
+    <h4 class="heading-light">Show it to your friends</h4>
+    <ul class="social list-inline">
+      <li class="list-inline-item">
+        <a href="#" data-animate-hover="pulse" class="external facebook"
+          ><i class="fa fa-facebook"></i
+        ></a>
+      </li>
+      <li class="list-inline-item">
+        <a href="#" data-animate-hover="pulse" class="external gplus"
+          ><i class="fa fa-google-plus"></i
+        ></a>
+      </li>
+      <li class="list-inline-item">
+        <a href="#" data-animate-hover="pulse" class="external twitter"
+          ><i class="fa fa-twitter"></i
+        ></a>
+      </li>
+      <li class="list-inline-item">
+        <a href="#" data-animate-hover="pulse" class="email"
+          ><i class="fa fa-envelope"></i
+        ></a>
+      </li>
+    </ul>
+  </div>
+  <div class="row">
+    <div class="col-lg-3 col-md-6">
+      <div class="box text-uppercase mt-0 mb-small">
+        <h3>You may also like these products</h3>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+      <div class="product">
+        <div class="image">
+          <a href="#"
+            ><img
+              src="/assets/img/product2.jpg"
+              alt=""
+              class="img-fluid image1"
+          /></a>
+        </div>
+        <div class="text">
+          <h3 class="h5"><a href="shop-detail.html">Fur coat</a></h3>
+          <p class="price">$143</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+      <div class="product">
+        <div class="image">
+          <a href="#"
+            ><img
+              src="/assets/img/product3.jpg"
+              alt=""
+              class="img-fluid image1"
+          /></a>
+        </div>
+        <div class="text">
+          <h3 class="h5"><a href="shop-detail.html">Fur coat</a></h3>
+          <p class="price">$143</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+      <div class="product">
+        <div class="image">
+          <a href="#"
+            ><img
+              src="/assets/img/product1.jpg"
+              alt=""
+              class="img-fluid image1"
+          /></a>
+        </div>
+        <div class="text">
+          <h3 class="h5"><a href="shop-detail.html">Fur coat</a></h3>
+          <p class="price">$143</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3 col-md-6">
+      <div class="box text-uppercase mt-0 mb-small">
+        <h3>Products viewed recently</h3>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+      <div class="product">
+        <div class="image">
+          <a href="#"
+            ><img
+              src="/assets/img/product3.jpg"
+              alt=""
+              class="img-fluid image1"
+          /></a>
+        </div>
+        <div class="text">
+          <h3 class="h5"><a href="shop-detail.html">Fur coat</a></h3>
+          <p class="price">$143</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+      <div class="product">
+        <div class="image">
+          <a href="#"
+            ><img
+              src="/assets/img/product1.jpg"
+              alt=""
+              class="img-fluid image1"
+          /></a>
+        </div>
+        <div class="text">
+          <h3 class="h5"><a href="shop-detail.html">Fur coat</a></h3>
+          <p class="price">$143</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+      <div class="product">
+        <div class="image">
+          <a href="#"
+            ><img
+              src="/assets/img/product2.jpg"
+              alt=""
+              class="img-fluid image1"
+          /></a>
+        </div>
+        <div class="text">
+          <h3 class="h5"><a href="shop-detail.html">Fur coat</a></h3>
+          <p class="price">$143</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="container bootdey mainproduct">
+  <div class="col-md-12">
+    <section class="panel">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="pro-img-details">
+              <img
+                src="https://via.placeholder.com/550x380/FFB6C1/000000"
+                alt=""
+              />
+            </div>
+            <div class="pro-img-list">
+              <a href="#">
+                <img
+                  src="https://via.placeholder.com/115x100/87CEFA/000000"
+                  alt=""
+                />
+              </a>
+              <a href="#">
+                <img
+                  src="https://via.placeholder.com/115x100/FF7F50/000000"
+                  alt=""
+                />
+              </a>
+              <a href="#">
+                <img
+                  src="https://via.placeholder.com/115x100/20B2AA/000000"
+                  alt=""
+                />
+              </a>
+              <a href="#">
+                <img
+                  src="https://via.placeholder.com/120x100/20B2AA/000000"
+                  alt=""
+                />
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <h4 class="pro-d-title">
+              <a href="#" class=""> Leopard Shirt Dress </a>
+            </h4>
+            <p>
+              Praesent ac condimentum felis. Nulla at nisl orci, at dignissim
+              dolor, The best product descriptions address your ideal buyer
+              directly and personally. The best product descriptions address
+              your ideal buyer directly and personally.
+            </p>
+            <div class="product_meta">
+              <span class="posted_in">
+                <strong>Categories:</strong>
+                <a rel="tag" href="#">Jackets</a>,
+                <a rel="tag" href="#">Men</a>, <a rel="tag" href="#">Shirts</a>,
+                <a rel="tag" href="#">T-shirt</a>.</span
+              >
+              <span class="tagged_as"
+                ><strong>Tags:</strong> <a rel="tag" href="#">mens</a>,
+                <a rel="tag" href="#">womens</a>.</span
+              >
+            </div>
+            <div class="m-bot15">
+              <strong>Price : </strong> <span class="amount-old">$544</span>
+              <span class="pro-price"> $300.00</span>
+            </div>
+            <div class="form-group">
+              <label>Quantity</label>
+              <div
+                role="alert"
+                class="alert alert-danger alert-dismissible"
+                *ngIf="errquantite"
+              >
+                <button type="button" data-dismiss="alert" class="close">
+                  <span aria-hidden="true">×</span
+                  ><span class="sr-only">Close</span></button
+                >{{ errquantite }}
+              </div>
+              <input
+                type="quantiy"
+                placeholder="1"
+                class="form-control quantity"
+                required
+                name="quantity"
+                [(ngModel)]="quantite"
+              />
+            </div>
+            <p>
+              <button
+                class="btn btn-round btn-danger"
+                type="button"
+                (click)="addtocart()"
+              >
+                <i class="fa fa-shopping-cart"></i> Add to Cart
+              </button>
+            </p>
+          </div>
+          <div class="col-lg-2"></div>
+        </div>
+        <div class="row"></div>
+      </div>
+    </section>
+  </div>
+</div>
